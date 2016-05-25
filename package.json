@@ -1,6 +1,6 @@
 {
   "name": "ember-cli-bootstrap-4",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "An ember-cli addon for using Bootstrap 4 in Ember applications.",
   "directories": {
     "doc": "doc",
