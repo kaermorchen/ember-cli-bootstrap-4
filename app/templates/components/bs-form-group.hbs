@@ -1,0 +1,15 @@
+<label>{{label}}</label>
+
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{bs-input value=value class=(if errors "form-control-danger") disabled=disabled }}
+{{/if}}
+
+{{#each errors as |error|}}
+  <small class="text-help">{{error.message}}</small>
+{{/each}}
+
+{{#if helpBlock}}
+  <small class="text-muted">{{helpBlock}}</small>
+{{/if}}
