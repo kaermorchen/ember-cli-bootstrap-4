@@ -85,7 +85,7 @@ You can use custom Bootstrap 4 variables. For this copy `bower_components\bootst
 ```
 
 ### JavaScript Components
-[WIP]
+This addon don't have any components.
 
 ## License
 Ember-cli-bootstrap-4 is released under the MIT License. See the bundled [LICENSE](LICENSE.md) file for details.
