@@ -1,5 +1,7 @@
+@import "custom";
+
 // Core variables and mixins
-@import "variables";
+@import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
 
 // Reset and dependencies
@@ -27,8 +29,7 @@
 @import "ember-cli-bootstrap-4/card";
 @import "ember-cli-bootstrap-4/breadcrumb";
 @import "ember-cli-bootstrap-4/pagination";
-@import "ember-cli-bootstrap-4/pager";
-@import "ember-cli-bootstrap-4/labels";
+@import "ember-cli-bootstrap-4/tags";
 @import "ember-cli-bootstrap-4/jumbotron";
 @import "ember-cli-bootstrap-4/alert";
 @import "ember-cli-bootstrap-4/progress";
@@ -45,8 +46,5 @@
 
 // Utility classes
 @import "ember-cli-bootstrap-4/utilities";
-@import "ember-cli-bootstrap-4/utilities-background";
-@import "ember-cli-bootstrap-4/utilities-spacing";
-@import "ember-cli-bootstrap-4/utilities-responsive";
 
 // @import "ember-cli-bootstrap-4/bootstrap";

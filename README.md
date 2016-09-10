@@ -16,7 +16,28 @@ Then include the following in your `app.scss` file:
 @import "ember-cli-bootstrap-4/bootstrap";
 ```
 
+or for flex support
+
+```
+@import "ember-cli-bootstrap-4/bootstrap-flex";
+```
+
+or for grid only
+
+```
+@import "ember-cli-bootstrap-4/bootstrap-grid";
+```
+
 ## Configuration
+
+### Custom variables
+
+You can use custom Bootstrap 4 variables. For this copy `bower_components\bootstrap\scss\_variables.scss` in your `app\styles` directory as `_custom.scss`. And add import `_custom.scss` in `app.scss`.
+
+```
+@import "custom";
+@import "ember-cli-bootstrap-4/bootstrap";
+```
 
 ### Custom Bootstrap 4 components
 
@@ -24,6 +45,7 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 
 ```
 // Core variables and mixins
+@import "ember-cli-bootstrap-4/custom";
 @import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
 
@@ -52,8 +74,7 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/card";
 @import "ember-cli-bootstrap-4/breadcrumb";
 @import "ember-cli-bootstrap-4/pagination";
-@import "ember-cli-bootstrap-4/pager";
-@import "ember-cli-bootstrap-4/labels";
+@import "ember-cli-bootstrap-4/tags";
 @import "ember-cli-bootstrap-4/jumbotron";
 @import "ember-cli-bootstrap-4/alert";
 @import "ember-cli-bootstrap-4/progress";
@@ -70,18 +91,6 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 
 // Utility classes
 @import "ember-cli-bootstrap-4/utilities";
-@import "ember-cli-bootstrap-4/utilities-background";
-@import "ember-cli-bootstrap-4/utilities-spacing";
-@import "ember-cli-bootstrap-4/utilities-responsive";
-```
-
-### Custom variables
-
-You can use custom Bootstrap 4 variables. For this copy `bower_components\bootstrap\scss\_variables.scss` in your `app\styles` directory. And add import `variables.scss` in `app.scss`.
-
-```
-@import "variables";
-@import "ember-cli-bootstrap-4/bootstrap";
 ```
 
 ### JavaScript Components
