@@ -94,7 +94,15 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 ```
 
 ### JavaScript Components
-This addon don't have any components.
+This addon don't have any javascript components.
+
+If you will use Bootstrap's javascript you should import needed files.
+
+```
+app.import(`${app.bowerDirectory}/tether/dist/js/tether.min.js`);
+app.import(`${app.bowerDirectory}/bootstrap/dist/js/bootstrap.min.js`);
+```
+
 
 ## License
 Ember-cli-bootstrap-4 is released under the MIT License. See the bundled [LICENSE](LICENSE.md) file for details.
