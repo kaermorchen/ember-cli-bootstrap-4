@@ -2,7 +2,7 @@ module.exports = {
   normalizeEntityName: function () { },
 
   beforeInstall: function () {
-    return this.addBowerPackageToProject('bootstrap', '~v4.0.0-alpha.4');
+    return this.addBowerPackageToProject('bootstrap', '~v4.0.0-alpha.6');
   },
 
   afterInstall: function () {
