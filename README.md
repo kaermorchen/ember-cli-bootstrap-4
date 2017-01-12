@@ -16,12 +16,6 @@ Then include the following in your `app.scss` file:
 @import "ember-cli-bootstrap-4/bootstrap";
 ```
 
-or for flex support
-
-```
-@import "ember-cli-bootstrap-4/bootstrap-flex";
-```
-
 or for grid only
 
 ```
