@@ -6,7 +6,6 @@
     "bootstrap",
     "bootstrap-4",
     "ember-addon"
-
   ],
   "license": "MIT",
   "author": {
@@ -31,7 +30,10 @@
   "dependencies": {
     "ember-cli-babel": "^6.0.0",
     "ember-cli-node-assets": "^0.2.2",
-    "ember-cli-sass": "^6.1.2"
+    "ember-cli-sass": "^6.1.2",
+    "broccoli-funnel": "^1.2.0",
+    "broccoli-merge-trees": "^2.0.0",
+    "bootstrap": "^v4.0.0-alpha.6"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.4.5",

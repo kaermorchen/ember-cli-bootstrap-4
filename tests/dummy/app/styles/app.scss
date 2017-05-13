@@ -1,5 +1,3 @@
-@import "custom";
-
 // Core variables and mixins
 @import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
@@ -19,7 +17,7 @@
 @import "ember-cli-bootstrap-4/buttons";
 
 // Components
-@import "ember-cli-bootstrap-4/animation";
+@import "ember-cli-bootstrap-4/transitions";
 @import "ember-cli-bootstrap-4/dropdown";
 @import "ember-cli-bootstrap-4/button-group";
 @import "ember-cli-bootstrap-4/input-group";
@@ -29,7 +27,7 @@
 @import "ember-cli-bootstrap-4/card";
 @import "ember-cli-bootstrap-4/breadcrumb";
 @import "ember-cli-bootstrap-4/pagination";
-@import "ember-cli-bootstrap-4/tags";
+@import "ember-cli-bootstrap-4/badge";
 @import "ember-cli-bootstrap-4/jumbotron";
 @import "ember-cli-bootstrap-4/alert";
 @import "ember-cli-bootstrap-4/progress";
