@@ -25,7 +25,8 @@ module.exports = {
     }
 
     return this.addPackagesToProject([
-      { name: 'bootstrap', target: '^v4.0.0-alpha.6' }
+      { name: 'bootstrap', target: '^v4.0.0-alpha.6' },
+      { name: 'ember-cli-sass', target: '^6.1.2' }
     ]);
   }
 };
