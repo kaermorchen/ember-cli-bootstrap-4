@@ -25,12 +25,21 @@ module.exports = {
 
   options: {
     nodeAssets: {
-      tether: {
-        enabled: !process.env.EMBER_CLI_FASTBOOT,
-        srcDir: 'dist/js',
-        import: [
-          'tether.js'
-        ]
+      'popper.js': {
+        vendor: {
+          enabled: !process.env.EMBER_CLI_FASTBOOT,
+          srcDir: 'dist/umd',
+          import: [
+            'popper.js',
+            'popper.js.map',
+            'popper-utils.js',
+            'popper-utils.js.map'
+          ],
+          included: function(parent) {
+            console.log(parent);
+            this._super.included.apply(this, arguments);
+          }
+        }
       },
       bootstrap: {
         enabled: !process.env.EMBER_CLI_FASTBOOT,
