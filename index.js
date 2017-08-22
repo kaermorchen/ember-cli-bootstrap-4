@@ -26,20 +26,12 @@ module.exports = {
   options: {
     nodeAssets: {
       'popper.js': {
-        vendor: {
-          enabled: !process.env.EMBER_CLI_FASTBOOT,
-          srcDir: 'dist/umd',
-          import: [
-            'popper.js',
-            'popper.js.map',
-            'popper-utils.js',
-            'popper-utils.js.map'
-          ],
-          included: function(parent) {
-            console.log(parent);
-            this._super.included.apply(this, arguments);
-          }
-        }
+        enabled: !process.env.EMBER_CLI_FASTBOOT,
+        srcDir: 'dist/umd',
+        import: [
+          'popper.js',
+          'popper-utils.js'
+        ]
       },
       bootstrap: {
         enabled: !process.env.EMBER_CLI_FASTBOOT,
