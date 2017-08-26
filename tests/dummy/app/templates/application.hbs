@@ -1,41 +1,107 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+  <a class="navbar-brand" href="#">Ember CLI Bootstrap 4</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault"
+    aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+  <div class="collapse navbar-collapse" id="navbarsDefault">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="#Ember_CLI_Bootstrap_4_0">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#Getting_Started">Getting Started</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link" href="#Configuration">Configuration</a>
       </li>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+        <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">Other</a>
         <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <a class="dropdown-item" href="#">Something else here</a>
+          <a class="dropdown-item" href="#JavaScript_Components">JavaScript Components</a>
+          <a class="dropdown-item" href="#License">License</a>
         </div>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+
+    <ul class="navbar-nav flex-row ml-md-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="https://github.com/kaermorchen/ember-cli-bootstrap-4">GitHub</a>
+      </li>
+    </ul>
   </div>
 </nav>
 
 <div class="container">
+  <h1><a id="Ember_CLI_Bootstrap_4_0"></a>Ember CLI Bootstrap 4</h1>
+  <p>
+    <a href="http://badge.fury.io/js/ember-cli-bootstrap-4"><img src="https://badge.fury.io/js/ember-cli-bootstrap-4.svg" alt="npm version"></a>
+    <a href=""><img src="https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg" alt="npm"></a>
+    <a href="https://emberobserver.com/addons/ember-cli-bootstrap-4"><img src="https://emberobserver.com/badges/ember-cli-bootstrap-4.svg" alt="Ember Observer Score"></a>
+    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></a>
+  </p>
+  <p>An <a href="http://www.ember-cli.com">ember-cli</a> addon for using <a href="http://getbootstrap.com/">Bootstrap 4</a>    in Ember applications.</p>
 
-  <div class="starter-template">
-    <h1>Bootstrap starter template</h1>
-    <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
-  </div>
+  <h2><a id="Getting_Started"></a>Getting Started</h2>
+  <p>Install in ember-cli application</p>
+  <pre><code>ember install ember-cli-bootstrap-4</code></pre>
+  <p>Then include the following in your <code>app.scss</code> file:</p>
+  <pre><code>@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code></pre>
+  <p>or for grid only</p>
+  <pre><code>@import &quot;ember-cli-bootstrap-4/bootstrap-grid&quot;;</code></pre>
+
+  <h2><a id="Configuration"></a>Configuration</h2>
+
+  <h3><a id="Custom_variables_31"></a>Custom variables</h3>
+  <p>You can use custom Bootstrap 4 variables. For this copy <code>bower_components\bootstrap\scss\_variables.scss</code> in
+    your <code>app\styles</code> directory as <code>_custom.scss</code>. And add import <code>_custom.scss</code> in <code>app.scss</code>.</p>
+<pre><code>@import &quot;custom&quot;;
+@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code></pre>
+
+  <h3><a id="Custom_Bootstrap_4_components_40"></a>Custom Bootstrap 4 components</h3>
+  <p>For import custom Bootstrap 4 css components instead <code>@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code>    you can use code below:</p>
+<pre><code>@import &quot;ember-cli-bootstrap-4/functions&quot;;
+@import &quot;ember-cli-bootstrap-4/variables&quot;;
+@import &quot;ember-cli-bootstrap-4/mixins&quot;;
+@import &quot;ember-cli-bootstrap-4/print&quot;;
+@import &quot;ember-cli-bootstrap-4/reboot&quot;;
+@import &quot;ember-cli-bootstrap-4/type&quot;;
+@import &quot;ember-cli-bootstrap-4/images&quot;;
+@import &quot;ember-cli-bootstrap-4/code&quot;;
+@import &quot;ember-cli-bootstrap-4/grid&quot;;
+@import &quot;ember-cli-bootstrap-4/tables&quot;;
+@import &quot;ember-cli-bootstrap-4/forms&quot;;
+@import &quot;ember-cli-bootstrap-4/buttons&quot;;
+@import &quot;ember-cli-bootstrap-4/transitions&quot;;
+@import &quot;ember-cli-bootstrap-4/dropdown&quot;;
+@import &quot;ember-cli-bootstrap-4/button-group&quot;;
+@import &quot;ember-cli-bootstrap-4/input-group&quot;;
+@import &quot;ember-cli-bootstrap-4/custom-forms&quot;;
+@import &quot;ember-cli-bootstrap-4/nav&quot;;
+@import &quot;ember-cli-bootstrap-4/navbar&quot;;
+@import &quot;ember-cli-bootstrap-4/card&quot;;
+@import &quot;ember-cli-bootstrap-4/breadcrumb&quot;;
+@import &quot;ember-cli-bootstrap-4/pagination&quot;;
+@import &quot;ember-cli-bootstrap-4/badge&quot;;
+@import &quot;ember-cli-bootstrap-4/jumbotron&quot;;
+@import &quot;ember-cli-bootstrap-4/alert&quot;;
+@import &quot;ember-cli-bootstrap-4/progress&quot;;
+@import &quot;ember-cli-bootstrap-4/media&quot;;
+@import &quot;ember-cli-bootstrap-4/list-group&quot;;
+@import &quot;ember-cli-bootstrap-4/close&quot;;
+@import &quot;ember-cli-bootstrap-4/modal&quot;;
+@import &quot;ember-cli-bootstrap-4/tooltip&quot;;
+@import &quot;ember-cli-bootstrap-4/popover&quot;;
+@import &quot;ember-cli-bootstrap-4/carousel&quot;;
+@import &quot;ember-cli-bootstrap-4/utilities&quot;;</code></pre>
+
+  <h3><a id="JavaScript_Components"></a>JavaScript Components</h3>
+  <p>This addon don’t have any javascript components.</p>
+  <p>Javascript files of Bootstrap are adding from <code>bootstrap/dist/js/bootstrap.js</code></p>
+
+  <h2><a id="License"></a>License</h2>
+  <p>Ember-cli-bootstrap-4 is released under the MIT License. See the bundled <a href="LICENSE.md">LICENSE</a> file for details.</p>
 
 </div>
