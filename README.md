@@ -1,8 +1,9 @@
 # Ember CLI Bootstrap 4
 
-[![npm version](https://badge.fury.io/js/ember-cli-bootstrap-4.svg)](http://badge.fury.io/js/ember-cli-bootstrap-4)
-[![npm](https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg)]()
+[![npm version](https://badge.fury.io/js/ember-cli-bootstrap-4.svg)](https://www.npmjs.com/package/ember-cli-bootstrap-4)
+[![npm monthly downloads](https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg)](https://www.npmjs.com/package/ember-cli-bootstrap-4)
 [![Ember Observer Score](https://emberobserver.com/badges/ember-cli-bootstrap-4.svg)](https://emberobserver.com/addons/ember-cli-bootstrap-4)
+[![Build Status](https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4.svg?branch=master)](https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
 An [ember-cli](http://www.ember-cli.com) addon for using [Bootstrap 4](http://getbootstrap.com/) in Ember applications.
