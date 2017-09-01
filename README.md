@@ -32,7 +32,7 @@ or for grid only
 
 ### Custom variables
 
-You can use custom Bootstrap 4 variables. For this copy `bower_components\bootstrap\scss\_variables.scss` in your `app\styles` directory as `_custom.scss`. And add import `_custom.scss` in `app.scss`.
+You can use custom Bootstrap 4 variables. Store your custom [available](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss) variables in `app\styles\_custom.scss`. And add import `_custom.scss` in `app.scss`.
 
 ```
 @import "custom";
