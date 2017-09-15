@@ -8,6 +8,8 @@
 
 An [ember-cli](http://www.ember-cli.com) addon for using [Bootstrap 4](http://getbootstrap.com/) in Ember applications.
 
+### [Demo](https://kaermorchen.github.io/ember-cli-bootstrap-4/)
+
 ## Getting Started
 
 Install in ember-cli application
