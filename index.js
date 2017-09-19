@@ -3,6 +3,7 @@
 
 var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
+var fastbootTransform = require('fastboot-transform');
 
 module.exports = {
   name: 'ember-cli-bootstrap-4',
@@ -26,19 +27,29 @@ module.exports = {
   options: {
     nodeAssets: {
       'popper.js': {
-        enabled: !process.env.EMBER_CLI_FASTBOOT,
         srcDir: 'dist/umd',
-        import: [
-          'popper.js',
-          'popper-utils.js'
-        ]
+        import: {
+          include: [
+            'popper.js',
+            'popper-utils.js',
+            'popper.js.map',
+            'popper-utils.js.map'
+          ],
+          processTree(input) {
+            return fastbootTransform(input);
+          }
+        }
       },
       bootstrap: {
-        enabled: !process.env.EMBER_CLI_FASTBOOT,
         srcDir: 'dist/js',
-        import: [
-          'bootstrap.js'
-        ]
+        import: {
+          include: [
+            'bootstrap.js'
+          ],
+          processTree(input) {
+            return fastbootTransform(input);
+          }
+        }
       }
     }
   }
