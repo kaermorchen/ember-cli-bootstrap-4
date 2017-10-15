@@ -18,7 +18,7 @@ module.exports = {
 
     if (fs.existsSync(file)) {
       this.ui.writeLine(`Added import statement to ${file}`);
-      return this.insertIntoFile(file, importStatement, {});
+      this.insertIntoFile(file, importStatement, {});
     } else {
       fs.writeFileSync(file, importStatement);
       this.ui.writeLine(`Created ${file}`);
@@ -26,8 +26,8 @@ module.exports = {
 
     return this.addPackagesToProject([
       { name: 'bootstrap', target: '4.0.0-beta' },
-      { name: 'popper.js', target: '1.12.3' },
-      { name: 'ember-cli-sass', target: '^6.1.2' }
+      { name: 'popper.js', target: '^1.12.5' },
+      { name: 'ember-cli-sass', target: '^7.0.0' }
     ]);
   }
 };
