@@ -1,10 +1,12 @@
-# Ember CLI Bootstrap 4
+<h1 align="center">Ember CLI Bootstrap 4</h1>
 
-[![npm version](https://badge.fury.io/js/ember-cli-bootstrap-4.svg)](https://www.npmjs.com/package/ember-cli-bootstrap-4)
-[![npm monthly downloads](https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg)](https://www.npmjs.com/package/ember-cli-bootstrap-4)
-[![Ember Observer Score](https://emberobserver.com/badges/ember-cli-bootstrap-4.svg)](https://emberobserver.com/addons/ember-cli-bootstrap-4)
-[![Build Status](https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4.svg?branch=master)](https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+<p align="center">
+  <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/v/ember-cli-bootstrap-4.svg?style=flat-square&colorB=44cc11" alt="npm version"></a>
+  <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg?style=flat-square" alt="npm monthly downloads"></a>  
+  <a href="https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4"><img src="https://img.shields.io/travis/kaermorchen/ember-cli-bootstrap-4.svg?style=flat-square" alt="Build Status"></a>
+  <a href="https://emberobserver.com/addons/ember-cli-bootstrap-4"><img src="https://emberobserver.com/badges/ember-cli-bootstrap-4.svg" alt="Ember Observer Score"></a>
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License: MIT"></a>
+</p>
 
 An [ember-cli](http://www.ember-cli.com) addon for using [Bootstrap 4](http://getbootstrap.com/) in Ember applications.
 
