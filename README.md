@@ -16,19 +16,19 @@ An [ember-cli](http://www.ember-cli.com) addon for using [Bootstrap 4](http://ge
 
 Install in ember-cli application
 
-```
+```bash
 ember install ember-cli-bootstrap-4
 ```
 
 Then include the following in your `app.scss` file:
 
-```
+```scss
 @import "ember-cli-bootstrap-4/bootstrap";
 ```
 
 or for grid only
 
-```
+```scss
 @import "ember-cli-bootstrap-4/bootstrap-grid";
 ```
 
@@ -38,7 +38,7 @@ or for grid only
 
 You can use custom Bootstrap 4 variables. Store your custom [available](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss) variables in `app\styles\_custom.scss`. And add import `_custom.scss` in `app.scss`.
 
-```
+```scss
 @import "custom";
 @import "ember-cli-bootstrap-4/bootstrap";
 ```
@@ -47,7 +47,7 @@ You can use custom Bootstrap 4 variables. Store your custom [available](https://
 
 For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstrap-4/bootstrap";` you can use code below:
 
-```
+```scss
 @import "ember-cli-bootstrap-4/functions";
 @import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
