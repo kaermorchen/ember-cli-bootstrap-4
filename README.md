@@ -43,7 +43,7 @@ For import not all Bootstrap 4 js modules, you can specify its in `ember-cli-bui
 
 ```js
 module.exports = function(defaults) {
-  let app = new EmberAddon(defaults, {
+  let app = new EmberApp(defaults, {
     'ember-cli-bootstrap-4': {
       js: ['util', 'alert', 'tooltip']
     }
@@ -56,7 +56,7 @@ module.exports = function(defaults) {
 Or you can turn its off:
 ```js
 module.exports = function(defaults) {
-  let app = new EmberAddon(defaults, {
+  let app = new EmberApp(defaults, {
     'ember-cli-bootstrap-4': {
       js: null
     }
