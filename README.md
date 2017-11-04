@@ -34,6 +34,38 @@ or for grid only
 
 ## Configuration
 
+### JavaScript Components
+This addon don't have any Ember.js components.
+
+Javascript files of Bootstrap are adding from `bootstrap/dist/js/bootstrap.js`.
+
+For import not all Bootstrap 4 js modules, you can specify its in `ember-cli-build`:
+
+```js
+module.exports = function(defaults) {
+  let app = new EmberAddon(defaults, {
+    'ember-cli-bootstrap-4': {
+      js: ['util', 'alert', 'tooltip']
+    }
+  });
+
+  ...
+};
+```
+
+Or you can turn its off:
+```js
+module.exports = function(defaults) {
+  let app = new EmberAddon(defaults, {
+    'ember-cli-bootstrap-4': {
+      js: null
+    }
+  });
+
+  ...
+};
+```
+
 ### Custom variables
 
 You can use custom Bootstrap 4 variables. Store your custom [available](https://github.com/twbs/bootstrap/blob/v4-dev/scss/_variables.scss) variables in `app\styles\_custom.scss`. And add import `_custom.scss` in `app.scss`.
@@ -83,11 +115,6 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/carousel";
 @import "ember-cli-bootstrap-4/utilities";
 ```
-
-### JavaScript Components
-This addon don't have any javascript components.
-
-Javascript files of Bootstrap are adding from `bootstrap/dist/js/bootstrap.js`
 
 ## License
 Ember-cli-bootstrap-4 is released under the MIT License. See the bundled [LICENSE](LICENSE.md) file for details.
