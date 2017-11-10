@@ -18,10 +18,10 @@ module.exports = {
 
     var popperPath = path.join('node_modules', 'popper.js', 'dist', 'umd');
     var jsPath = path.join('node_modules', 'bootstrap', 'js', 'dist');
-    var options = Object.assign({}, defaultOptions, this.app.options[this.name]);
+    var options = Object.assign({}, defaultOptions, app.options[this.name]);
 
     if (Array.isArray(options.js)) {
-      var include = options.js.map(item => item + '.js');
+      var include = options.js.map(function(item) { return item + '.js' });
 
       app.import({
         development: path.join(popperPath, 'popper.js'),
@@ -40,10 +40,16 @@ module.exports = {
   },
 
   treeForStyles: function treeForStyles(tree) {
-    const styleTrees = [];
+    var styleTrees = [];
+    var current = this;
+    var app;
 
-    if (this.app.project.findAddonByName('ember-cli-sass')) {
-      styleTrees.push(new Funnel('node_modules/bootstrap/scss', {
+    do {
+      app = current.app || app;
+    } while (current.parent.parent && (current = current.parent));
+
+    if (app.project.findAddonByName('ember-cli-sass')) {
+      styleTrees.push(new Funnel(path.join('node_modules', 'bootstrap', 'scss'), {
         destDir: 'ember-cli-bootstrap-4'
       }));
     }
