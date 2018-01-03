@@ -83,7 +83,7 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/functions";
 @import "ember-cli-bootstrap-4/variables";
 @import "ember-cli-bootstrap-4/mixins";
-@import "ember-cli-bootstrap-4/print";
+@import "ember-cli-bootstrap-4/root";
 @import "ember-cli-bootstrap-4/reboot";
 @import "ember-cli-bootstrap-4/type";
 @import "ember-cli-bootstrap-4/images";
@@ -114,6 +114,7 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/popover";
 @import "ember-cli-bootstrap-4/carousel";
 @import "ember-cli-bootstrap-4/utilities";
+@import "ember-cli-bootstrap-4/print";
 ```
 
 ## License

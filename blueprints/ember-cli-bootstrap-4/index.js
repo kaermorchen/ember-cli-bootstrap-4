@@ -25,7 +25,7 @@ module.exports = {
     }
 
     return this.addPackagesToProject([
-      { name: 'bootstrap', target: '4.0.0-beta.2' },
+      { name: 'bootstrap', target: '4.0.0-beta.3' },
       { name: 'popper.js', target: '^1.12.5' },
       { name: 'ember-cli-sass', target: '^7.0.0' }
     ]);
