@@ -3,7 +3,6 @@
 var path = require('path');
 var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
-var fastbootTransform = require('fastboot-transform');
 
 const defaultOptions = {
   js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab']
