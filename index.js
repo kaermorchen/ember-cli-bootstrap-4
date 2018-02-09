@@ -17,22 +17,27 @@ module.exports = {
     var popperPath = path.join('node_modules', 'popper.js', 'dist', 'umd');
     var jsPath = path.join('node_modules', 'bootstrap', 'js', 'dist');
     var options = Object.assign({}, defaultOptions, app.options[this.name]);
+    var importOptions = {
+      using: [{
+        transformation: 'fastbootShim'
+      }]
+    };
 
     if (Array.isArray(options.js)) {
-      var include = options.js.map(function(item) { return item + '.js' });
+      var include = options.js.map(function (item) { return item + '.js' });
 
       app.import({
         development: path.join(popperPath, 'popper.js'),
-        production:  path.join(popperPath, 'popper.min.js'),
-      });
+        production: path.join(popperPath, 'popper.min.js'),
+      }, importOptions);
 
       app.import({
         development: path.join(popperPath, 'popper-utils.js'),
-        production:  path.join(popperPath, 'popper-utils.min.js'),
-      });
+        production: path.join(popperPath, 'popper-utils.min.js'),
+      }, importOptions);
 
-      include.forEach(function(file) {
-        app.import(path.join(jsPath, file));
+      include.forEach(function (file) {
+        app.import(path.join(jsPath, file), importOptions);
       });
     }
   },
