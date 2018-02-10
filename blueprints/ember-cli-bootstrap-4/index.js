@@ -8,9 +8,9 @@ module.exports = {
   normalizeEntityName: function () { },
 
   afterInstall: function () {
-    let importStatement = '\n@import "ember-cli-bootstrap-4/bootstrap";\n';
-    let stylePath = path.join('app', 'styles');
-    let file = path.join(stylePath, `app.scss`);
+    var importStatement = '\n@import "ember-cli-bootstrap-4/bootstrap";\n';
+    var stylePath = path.join('app', 'styles');
+    var file = path.join(stylePath, `app.scss`);
 
     if (!fs.existsSync(stylePath)) {
       fs.mkdirSync(stylePath);

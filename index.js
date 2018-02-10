@@ -42,7 +42,7 @@ module.exports = {
     }
   },
 
-  treeForStyles: function treeForStyles(tree) {
+  treeForStyles: function (tree) {
     var styleTrees = [];
     var current = this;
     var app;
