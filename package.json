@@ -30,12 +30,13 @@
     "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -"
   },
   "dependencies": {
+    "bootstrap": "4.0.0",
+    "broccoli-funnel": "^2.0.1",
+    "broccoli-merge-trees": "^2.0.0",
     "ember-cli-babel": "^6.6.0",
     "ember-cli-node-assets": "^0.2.2",
     "ember-cli-sass": "^7.0.0",
-    "broccoli-funnel": "^2.0.1",
-    "broccoli-merge-trees": "^2.0.0",
-    "bootstrap": "4.0.0",
+    "fastboot-transform": "^0.1.2",
     "popper.js": "1.12.9"
   },
   "devDependencies": {

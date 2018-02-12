@@ -3,6 +3,7 @@
 var path = require('path');
 var Funnel = require('broccoli-funnel');
 var mergeTrees = require('broccoli-merge-trees');
+const fastbootTransform = require('fastboot-transform');
 
 const defaultOptions = {
   js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab']
@@ -63,4 +64,10 @@ module.exports = {
 
     return mergeTrees(styleTrees, { overwrite: true });
   },
+
+  importTransforms: function () {
+    return {
+      fastbootShim: fastbootTransform
+    }
+  }
 };
