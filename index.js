@@ -20,7 +20,7 @@ module.exports = {
     var options = Object.assign({}, defaultOptions, app.options[this.name]);
     var importOptions = {
       using: [{
-        transformation: 'fastbootShim'
+        transformation: 'fastbootTransform'
       }]
     };
 
@@ -67,7 +67,7 @@ module.exports = {
 
   importTransforms: function () {
     return {
-      fastbootShim: fastbootTransform
+      fastbootTransform: fastbootTransform
     }
   }
 };
