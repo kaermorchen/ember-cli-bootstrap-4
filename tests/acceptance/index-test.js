@@ -1,18 +1,21 @@
-import { test } from 'qunit';
-import moduleForAcceptance from '../../tests/helpers/module-for-acceptance';
-import { visit, click, find, currentURL } from 'ember-native-dom-helpers';
+import { module, test } from 'qunit';
+import { visit, currentURL, find, click } from '@ember/test-helpers';
+import { setupApplicationTest } from 'ember-qunit';
 
-moduleForAcceptance('Acceptance | index');
+module('Acceptance | index', function(hooks) {
+  setupApplicationTest(hooks);
 
-test('visiting /index', async function(assert) {
-  await visit('/');
+  test('visiting /index', async function(assert) {
+    await visit('/');
 
-  assert.equal(currentURL(), '/');
+    assert.equal(currentURL(), '/');
 
-  const navbar = find('.navbar.bg-dark');
+    const navbar = find('.navbar.bg-dark');
 
-  assert.equal(window.getComputedStyle(navbar, null).getPropertyValue('background-color'), 'rgb(52, 58, 64)');
+    assert.equal(window.getComputedStyle(navbar, null).getPropertyValue('background-color'), 'rgb(52, 58, 64)');
 
-  await click('#dropdown01');
-  assert.ok(find('[aria-labelledby="dropdown01"].show'));
+    await click('#dropdown01');
+
+    assert.ok(find('[aria-labelledby="dropdown01"].show'));
+  });
 });
