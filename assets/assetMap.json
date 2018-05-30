@@ -3,9 +3,9 @@
     "assets/assetMap.json": "assets/assetMap.json",
     "assets/dummy-fastboot.js": "assets/dummy-fastboot-5bad6a103a3f7783d3db00e9f1787319.js",
     "assets/dummy.css": "assets/dummy-2c338f90826df0e4de799db92113fa07.css",
-    "assets/dummy.js": "assets/dummy-4d72261965754a1d88d8b51e6f071319.js",
+    "assets/dummy.js": "assets/dummy-c883f0add8d3fb318709f70cd76c99aa.js",
     "assets/vendor.css": "assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css",
-    "assets/vendor.js": "assets/vendor-1965e141e5f5f13d2d3c898594d07e9f.js",
+    "assets/vendor.js": "assets/vendor-918ab08b47a4c2af22257acd96c5203d.js",
     "images/apple-touch-icon.png": "images/apple-touch-icon-6fbceffed54c931c463a0e80f2e0faef.png"
   },
   "prepend": ""
