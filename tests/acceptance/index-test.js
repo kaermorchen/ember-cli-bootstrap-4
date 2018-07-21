@@ -16,6 +16,6 @@ module('Acceptance | index', function(hooks) {
 
     await click('#dropdown01');
 
-    assert.ok(find('[aria-labelledby="dropdown01"].show'));
+    assert.dom('[aria-labelledby="dropdown01"]').hasClass('show');
   });
 });
