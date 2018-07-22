@@ -40,7 +40,7 @@
     "broccoli-funnel": "^2.0.1",
     "broccoli-merge-trees": "^3.0.0",
     "ember-cli-babel": "^6.6.0",
-    "ember-cli-sass": "^7.0.0",
+    "ember-cli-sass": "^7.2.0",
     "fastboot-transform": "^0.1.2",
     "popper.js": "^1.14.0"
   },
