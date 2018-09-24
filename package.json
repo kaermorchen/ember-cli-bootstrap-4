@@ -42,7 +42,8 @@
     "ember-cli-babel": "^6.16.0",
     "ember-cli-sass": "^8.0.1",
     "fastboot-transform": "^0.1.2",
-    "popper.js": "^1.14.0"
+    "popper.js": "^1.14.0",
+    "sass": "^1.14.0"
   },
   "devDependencies": {
     "broccoli-asset-rev": "^2.7.0",
