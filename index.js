@@ -9,7 +9,7 @@ var defaultOptions = {
 };
 
 module.exports = {
-  name: 'ember-cli-bootstrap-4',
+  name: require('./package').name,
 
   included: function (app) {
     this._super.included.apply(this, arguments);
