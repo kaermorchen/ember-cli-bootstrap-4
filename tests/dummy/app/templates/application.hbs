@@ -1,32 +1,19 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
   <a class="navbar-brand" href="#">Ember CLI Bootstrap 4</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button 
+    class="navbar-toggler" 
+    type="button" 
+    data-toggle="collapse" 
+    data-target="#navbarsDefault" 
+    aria-controls="navbarsDefault"
+    aria-expanded="false" 
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarsDefault">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#Ember_CLI_Bootstrap_4_0">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Getting_Started">Getting Started</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#Configuration">Configuration</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true"
-          aria-expanded="false">Other</a>
-        <div class="dropdown-menu" aria-labelledby="dropdown01">
-          <a class="dropdown-item" href="#JavaScript_Components">JavaScript Components</a>
-          <a class="dropdown-item" href="#License">License</a>
-        </div>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav flex-row ml-md-auto">
+    <ul class="navbar-nav flex-row">
       <li class="nav-item">
         <a class="nav-link" href="https://github.com/kaermorchen/ember-cli-bootstrap-4">GitHub</a>
       </li>
@@ -35,75 +22,56 @@
 </nav>
 
 <div class="container">
-  <h1><a id="Ember_CLI_Bootstrap_4_0"></a>Ember CLI Bootstrap 4</h1>
-  <p>
-    <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/v/ember-cli-bootstrap-4.svg?style=flat-square&colorB=44cc11" alt="npm version"></a>
-    <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg?style=flat-square" alt="npm monthly downloads"></a>
-    <a href="https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4"><img src="https://img.shields.io/travis/kaermorchen/ember-cli-bootstrap-4.svg?style=flat-square" alt="Build Status"></a>
-    <a href="https://emberobserver.com/addons/ember-cli-bootstrap-4"><img src="https://emberobserver.com/badges/ember-cli-bootstrap-4.svg" alt="Ember Observer Score"></a>
-    <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License: MIT"></a>
-  </p>
-  <p>An <a href="http://www.ember-cli.com">ember-cli</a> addon for using <a href="http://getbootstrap.com/">Bootstrap 4</a>    in Ember applications.</p>
+  <h1 class="mb-5">Ember CLI Bootstrap 4</h1>
+  
+  <h2 id="Headings">Headings</h2>
+  <div class="mb-5">
+    <h1>h1. Bootstrap heading</h1>
+    <h2>h2. Bootstrap heading</h2>
+    <h3>h3. Bootstrap heading</h3>
+    <h4>h4. Bootstrap heading</h4>
+    <h5>h5. Bootstrap heading</h5>
+    <h6>h6. Bootstrap heading</h6>
+  </div>
 
-  <h2><a id="Getting_Started"></a>Getting Started</h2>
-  <p>Install in ember-cli application</p>
-  <pre><code>ember install ember-cli-bootstrap-4</code></pre>
-  <p>Then include the following in your <code>app.scss</code> file:</p>
-  <pre><code>@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code></pre>
-  <p>or for grid only</p>
-  <pre><code>@import &quot;ember-cli-bootstrap-4/bootstrap-grid&quot;;</code></pre>
+  <h2>Inline text elements</h2>
+  <div class="mb-5">
+    <p>You can use the mark tag to <mark>highlight</mark> text.</p>
+    <p><del>This line of text is meant to be treated as deleted text.</del></p>
+    <p><s>This line of text is meant to be treated as no longer accurate.</s></p>
+    <p><ins>This line of text is meant to be treated as an addition to the document.</ins></p>
+    <p><u>This line of text will render as underlined</u></p>
+    <p><small>This line of text is meant to be treated as fine print.</small></p>
+    <p><strong>This line rendered as bold text.</strong></p>
+    <p><em>This line rendered as italicized text.</em></p>
+  </div>
 
-  <h2><a id="Configuration"></a>Configuration</h2>
+  <h2>Blockquotes</h2>
+  <div class="mb-5">
+    <blockquote class="blockquote">
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+    </blockquote>
+  </div>
 
-  <h3><a id="Custom_variables_31"></a>Custom variables</h3>
-  <p>You can use custom Bootstrap 4 variables. For this copy <code>bower_components\bootstrap\scss\_variables.scss</code> in
-    your <code>app\styles</code> directory as <code>_custom.scss</code>. And add import <code>_custom.scss</code> in <code>app.scss</code>.</p>
-<pre><code>@import &quot;custom&quot;;
-@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code></pre>
-
-  <h3><a id="Custom_Bootstrap_4_components_40"></a>Custom Bootstrap 4 components</h3>
-  <p>For import custom Bootstrap 4 css components instead <code>@import &quot;ember-cli-bootstrap-4/bootstrap&quot;;</code>    you can use code below:</p>
-<pre><code>@import "ember-cli-bootstrap-4/functions";
-@import "ember-cli-bootstrap-4/variables";
-@import "ember-cli-bootstrap-4/mixins";
-@import "ember-cli-bootstrap-4/root";
-@import "ember-cli-bootstrap-4/reboot";
-@import "ember-cli-bootstrap-4/type";
-@import "ember-cli-bootstrap-4/images";
-@import "ember-cli-bootstrap-4/code";
-@import "ember-cli-bootstrap-4/grid";
-@import "ember-cli-bootstrap-4/tables";
-@import "ember-cli-bootstrap-4/forms";
-@import "ember-cli-bootstrap-4/buttons";
-@import "ember-cli-bootstrap-4/transitions";
-@import "ember-cli-bootstrap-4/dropdown";
-@import "ember-cli-bootstrap-4/button-group";
-@import "ember-cli-bootstrap-4/input-group";
-@import "ember-cli-bootstrap-4/custom-forms";
-@import "ember-cli-bootstrap-4/nav";
-@import "ember-cli-bootstrap-4/navbar";
-@import "ember-cli-bootstrap-4/card";
-@import "ember-cli-bootstrap-4/breadcrumb";
-@import "ember-cli-bootstrap-4/pagination";
-@import "ember-cli-bootstrap-4/badge";
-@import "ember-cli-bootstrap-4/jumbotron";
-@import "ember-cli-bootstrap-4/alert";
-@import "ember-cli-bootstrap-4/progress";
-@import "ember-cli-bootstrap-4/media";
-@import "ember-cli-bootstrap-4/list-group";
-@import "ember-cli-bootstrap-4/close";
-@import "ember-cli-bootstrap-4/modal";
-@import "ember-cli-bootstrap-4/tooltip";
-@import "ember-cli-bootstrap-4/popover";
-@import "ember-cli-bootstrap-4/carousel";
-@import "ember-cli-bootstrap-4/utilities";
-@import "ember-cli-bootstrap-4/print";</code></pre>
-
-  <h3><a id="JavaScript_Components"></a>JavaScript Components</h3>
-  <p>This addon don’t have any javascript components.</p>
-  <p>Javascript files of Bootstrap are adding from <code>bootstrap/dist/js/bootstrap.js</code></p>
-
-  <h2><a id="License"></a>License</h2>
-  <p>Ember-cli-bootstrap-4 is released under the MIT License. See the bundled <a href="LICENSE.md">LICENSE</a> file for details.</p>
-
+  <h2>Lists</h2>
+  <div class="mb-5">
+    <ul class="list-unstyled">
+      <li>Lorem ipsum dolor sit amet</li>
+      <li>Consectetur adipiscing elit</li>
+      <li>Integer molestie lorem at massa</li>
+      <li>Facilisis in pretium nisl aliquet</li>
+      <li>
+        Nulla volutpat aliquam velit
+        <ul>
+          <li>Phasellus iaculis neque</li>
+          <li>Purus sodales ultricies</li>
+          <li>Vestibulum laoreet porttitor sem</li>
+          <li>Ac tristique libero volutpat at</li>
+        </ul>
+      </li>
+      <li>Faucibus porta lacus fringilla vel</li>
+      <li>Aenean sit amet erat nunc</li>
+      <li>Eget porttitor lorem</li>
+    </ul>
+  </div>
 </div>
