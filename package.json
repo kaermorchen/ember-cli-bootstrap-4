@@ -47,6 +47,7 @@
     "sass": "^1.14.0"
   },
   "devDependencies": {
+    "@ember/jquery": "^0.5.2",
     "@ember/optional-features": "^0.6.3",
     "broccoli-asset-rev": "^3.0.0",
     "ember-cli": "~3.5.1",
