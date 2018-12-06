@@ -1,56 +1,66 @@
 'use strict';
 
-var path = require('path');
-var Funnel = require('broccoli-funnel');
-var mergeTrees = require('broccoli-merge-trees');
-var fastbootTransform = require('fastboot-transform');
-var defaultOptions = {
+let path = require('path');
+let Funnel = require('broccoli-funnel');
+let mergeTrees = require('broccoli-merge-trees');
+let fastbootTransform = require('fastboot-transform');
+let resolve = require('resolve');
+let defaultOptions = {
   js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab']
 };
 
 module.exports = {
   name: require('./package').name,
 
-  included: function (app) {
+  included(app) {
     this._super.included.apply(this, arguments);
     this._ensureFindHost();
 
-    var popperPath = path.join('node_modules', 'popper.js', 'dist', 'umd');
-    var jsPath = path.join('node_modules', 'bootstrap', 'js', 'dist');
-    var options = Object.assign({}, defaultOptions, app.options[this.name]);
-    var importOptions = {
-      using: [{
-        transformation: 'fastbootTransform'
-      }]
-    };
+    let vendorPath = `vendor/${this.name}`;
+    let options = Object.assign({}, defaultOptions, app.options[this.name]);
 
     if (Array.isArray(options.js)) {
-      var include = options.js.map(function (item) { return item + '.js' });
-      var host = this._findHost();
+      let host = this._findHost();
+      
+      host.import({
+        development: path.join(vendorPath, 'popper.js'),
+        production: path.join(vendorPath, 'popper.min.js'),
+      });
 
       host.import({
-        development: path.join(popperPath, 'popper.js'),
-        production: path.join(popperPath, 'popper.min.js'),
-      }, importOptions);
+        development: path.join(vendorPath, 'popper-utils.js'),
+        production: path.join(vendorPath, 'popper-utils.min.js'),
+      });
 
-      host.import({
-        development: path.join(popperPath, 'popper-utils.js'),
-        production: path.join(popperPath, 'popper-utils.min.js'),
-      }, importOptions);
-
-      include.forEach(function (file) {
-        host.import(path.join(jsPath, file), importOptions);
+      options.js.forEach(function (file) {
+        host.import(path.join(vendorPath, `${file}.js`));
       });
     }
   },
 
-  treeForStyles: function (tree) {
-    var styleTrees = [];
-    var host = this._findHost();
+  treeForVendor() {
+    let popperPath = path.join(this.resolvePackagePath('popper.js'), 'dist', 'umd');
+    let popperJs = fastbootTransform(new Funnel(popperPath, {
+      files: ['popper.js', 'popper.min.js', 'popper-utils.js', 'popper-utils.min.js'],
+      destDir: this.name
+    }));
+
+    let bootstrapPath = path.join(this.resolvePackagePath('bootstrap'), 'js', 'dist');
+    let bootstrapJs = fastbootTransform(new Funnel(bootstrapPath, {
+      files: defaultOptions.js.map(item => `${item}.js`),
+      destDir: this.name
+    }));
+
+    return mergeTrees([popperJs, bootstrapJs]);
+  },
+
+  treeForStyles(tree) {
+    let styleTrees = [];
+    let host = this._findHost();
 
     if (host.project.findAddonByName('ember-cli-sass')) {
-      styleTrees.push(new Funnel(path.join('node_modules', 'bootstrap', 'scss'), {
-        destDir: 'ember-cli-bootstrap-4'
+      styleTrees.push(new Funnel(path.join(this.resolvePackagePath('bootstrap'), 'scss'), {
+        destDir: this.name
       }));
     }
 
@@ -61,17 +71,15 @@ module.exports = {
     return mergeTrees(styleTrees, { overwrite: true });
   },
 
-  importTransforms: function () {
-    return {
-      fastbootTransform: fastbootTransform
-    }
+  resolvePackagePath(packageName) {
+    return path.dirname(resolve.sync(`${packageName}/package.json`, { basedir: this.app.project.root }));
   },
 
   _ensureFindHost() {
     if (!this._findHost) {
       this._findHost = function findHostShim() {
-        var current = this;
-        var app;
+        let current = this;
+        let app;
 
         do {
           app = current.app || app;
