@@ -1,11 +1,11 @@
 'use strict';
 
-let path = require('path');
-let Funnel = require('broccoli-funnel');
-let mergeTrees = require('broccoli-merge-trees');
-let fastbootTransform = require('fastboot-transform');
-let resolve = require('resolve');
-let defaultOptions = {
+const path = require('path');
+const Funnel = require('broccoli-funnel');
+const mergeTrees = require('broccoli-merge-trees');
+const fastbootTransform = require('fastboot-transform');
+const resolve = require('resolve');
+const defaultOptions = {
   js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab']
 };
 
