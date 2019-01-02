@@ -72,7 +72,8 @@ module.exports = {
   },
 
   resolvePackagePath(packageName) {
-    return path.dirname(resolve.sync(`${packageName}/package.json`, { basedir: this.app.project.root }));
+    let host = this._findHost();
+    return path.dirname(resolve.sync(`${packageName}/package.json`, { basedir: host.project.root }));
   },
 
   _ensureFindHost() {
