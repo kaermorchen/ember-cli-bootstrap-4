@@ -5,12 +5,14 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-  normalizeEntityName: function () { },
+  normalizeEntityName() {
+    return entityName || "ember-cli-bootstrap-4";
+  },
 
-  afterInstall: function () {
-    var importStatement = '\n@import "ember-cli-bootstrap-4/bootstrap";\n';
-    var stylePath = path.join('app', 'styles');
-    var file = path.join(stylePath, `app.scss`);
+  afterInstall() {
+    const importStatement = '\n@import "ember-cli-bootstrap-4/bootstrap";\n';
+    const stylePath = path.join('app', 'styles');
+    const file = path.join(stylePath, `app.scss`);
 
     if (!fs.existsSync(stylePath)) {
       fs.mkdirSync(stylePath);
@@ -25,9 +27,10 @@ module.exports = {
     }
 
     return this.addPackagesToProject([
-      { name: 'bootstrap', target: '^4.1.0' },
-      { name: 'popper.js', target: '^1.14.0' },
-      { name: 'ember-cli-sass', target: '^7.2.0' }
+      { name: 'bootstrap', target: '^4.2.0' },
+      { name: 'popper.js', target: '^1.14.7' },
+      { name: 'ember-cli-sass', target: '^10.0.0' },
+      { name: 'sass', target: '^1.16.0' },
     ]);
   }
 };
