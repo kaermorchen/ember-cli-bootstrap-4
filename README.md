@@ -10,6 +10,16 @@
 
 An [ember-cli](http://www.ember-cli.com) addon for using [Bootstrap 4](http://getbootstrap.com/) in Ember applications.
 
+Compatibility
+------------------------------------------------------------------------------
+
+* Ember.js v2.18 or above
+* Ember CLI v2.13 or above
+
+
+Installation
+------------------------------------------------------------------------------
+
 ### [Demo](https://kaermorchen.github.io/ember-cli-bootstrap-4/)
 
 ## Getting Started
