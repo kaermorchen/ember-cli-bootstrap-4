@@ -6,7 +6,7 @@ const mergeTrees = require('broccoli-merge-trees');
 const fastbootTransform = require('fastboot-transform');
 const resolve = require('resolve');
 const defaultOptions = {
-  js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab']
+  js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'popover', 'scrollspy', 'tab', 'toast', 'tooltip']
 };
 
 module.exports = {
@@ -21,7 +21,7 @@ module.exports = {
 
     if (Array.isArray(options.js)) {
       let host = this._findHost();
-      
+
       host.import({
         development: path.join(vendorPath, 'popper.js'),
         production: path.join(vendorPath, 'popper.min.js'),

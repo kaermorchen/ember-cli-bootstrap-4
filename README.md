@@ -55,7 +55,8 @@ For import not all Bootstrap 4 js modules, you can specify its in `ember-cli-bui
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     'ember-cli-bootstrap-4': {
-      js: ['util', 'alert', 'tooltip']
+      //Default list
+      js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'popover', 'scrollspy', 'tab', 'toast', 'tooltip'] 
     }
   });
 
@@ -119,10 +120,12 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/media";
 @import "ember-cli-bootstrap-4/list-group";
 @import "ember-cli-bootstrap-4/close";
+@import "ember-cli-bootstrap-4/toasts";
 @import "ember-cli-bootstrap-4/modal";
 @import "ember-cli-bootstrap-4/tooltip";
 @import "ember-cli-bootstrap-4/popover";
 @import "ember-cli-bootstrap-4/carousel";
+@import "ember-cli-bootstrap-4/spinners";
 @import "ember-cli-bootstrap-4/utilities";
 @import "ember-cli-bootstrap-4/print";
 ```
