@@ -130,5 +130,13 @@ For import custom Bootstrap 4 css components instead `@import "ember-cli-bootstr
 @import "ember-cli-bootstrap-4/print";
 ```
 
-## License
+Contributing
+------------------------------------------------------------------------------
+
+See the [Contributing](CONTRIBUTING.md) guide for details.
+
+
+License
+------------------------------------------------------------------------------
+
 Ember-cli-bootstrap-4 is released under the MIT License. See the bundled [LICENSE](LICENSE.md) file for details.
