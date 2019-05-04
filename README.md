@@ -56,7 +56,7 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     'ember-cli-bootstrap-4': {
       //Default list
-      js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'popover', 'scrollspy', 'tab', 'toast', 'tooltip'] 
+      js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab', 'toast']
     }
   });
 
