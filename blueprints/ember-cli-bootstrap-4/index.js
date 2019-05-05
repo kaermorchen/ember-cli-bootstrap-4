@@ -5,7 +5,7 @@ const path = require('path');
 const fs = require('fs');
 
 module.exports = {
-  normalizeEntityName() {
+  normalizeEntityName(entityName) {
     return entityName || "ember-cli-bootstrap-4";
   },
 
