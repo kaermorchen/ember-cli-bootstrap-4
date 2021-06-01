@@ -54,7 +54,7 @@ jobs:
   compatibility_tests:
     name: Compatibility tests
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     needs: basic_test
     steps:
       - uses: actions/checkout@v2
