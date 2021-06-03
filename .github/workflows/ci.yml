@@ -11,7 +11,7 @@ on:
   pull_request:
 
 env:
-  NODE_VERSION: 12.21
+  NODE_VERSION: 14.17
 
 jobs:
   lint:
