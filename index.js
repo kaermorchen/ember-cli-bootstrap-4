@@ -6,7 +6,20 @@ const mergeTrees = require('broccoli-merge-trees');
 const fastbootTransform = require('fastboot-transform');
 const resolve = require('resolve');
 const defaultOptions = {
-  js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab', 'toast']
+  js: [
+    'util',
+    'alert',
+    'button',
+    'carousel',
+    'collapse',
+    'dropdown',
+    'modal',
+    'tooltip',
+    'popover',
+    'scrollspy',
+    'tab',
+    'toast',
+  ],
 };
 
 module.exports = {
@@ -39,17 +52,34 @@ module.exports = {
   },
 
   treeForVendor() {
-    let popperPath = path.join(this.resolvePackagePath('popper.js'), 'dist', 'umd');
-    let popperJs = fastbootTransform(new Funnel(popperPath, {
-      files: ['popper.js', 'popper.min.js', 'popper-utils.js', 'popper-utils.min.js'],
-      destDir: this.name
-    }));
+    let popperPath = path.join(
+      this.resolvePackagePath('popper.js'),
+      'dist',
+      'umd'
+    );
+    let popperJs = fastbootTransform(
+      new Funnel(popperPath, {
+        files: [
+          'popper.js',
+          'popper.min.js',
+          'popper-utils.js',
+          'popper-utils.min.js',
+        ],
+        destDir: this.name,
+      })
+    );
 
-    let bootstrapPath = path.join(this.resolvePackagePath('bootstrap'), 'js', 'dist');
-    let bootstrapJs = fastbootTransform(new Funnel(bootstrapPath, {
-      files: defaultOptions.js.map(item => `${item}.js`),
-      destDir: this.name
-    }));
+    let bootstrapPath = path.join(
+      this.resolvePackagePath('bootstrap'),
+      'js',
+      'dist'
+    );
+    let bootstrapJs = fastbootTransform(
+      new Funnel(bootstrapPath, {
+        files: defaultOptions.js.map((item) => `${item}.js`),
+        destDir: this.name,
+      })
+    );
 
     return mergeTrees([popperJs, bootstrapJs]);
   },
@@ -59,9 +89,11 @@ module.exports = {
     let host = this._findHost();
 
     if (host.project.findAddonByName('ember-cli-sass')) {
-      styleTrees.push(new Funnel(path.join(this.resolvePackagePath('bootstrap'), 'scss'), {
-        destDir: this.name
-      }));
+      styleTrees.push(
+        new Funnel(path.join(this.resolvePackagePath('bootstrap'), 'scss'), {
+          destDir: this.name,
+        })
+      );
     }
 
     if (tree) {
@@ -73,7 +105,11 @@ module.exports = {
 
   resolvePackagePath(packageName) {
     let host = this._findHost();
-    return path.dirname(resolve.sync(`${packageName}/package.json`, { basedir: host.project.root }));
+    return path.dirname(
+      resolve.sync(`${packageName}/package.json`, {
+        basedir: host.project.root,
+      })
+    );
   },
 
   _ensureFindHost() {
@@ -89,5 +125,5 @@ module.exports = {
         return app;
       };
     }
-  }
+  },
 };
