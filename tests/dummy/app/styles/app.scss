@@ -48,7 +48,7 @@ body {
 }
 
 pre {
-  padding: $spacer / 2;
+  padding: calc($spacer / 2);
   background-color: $gray-100;
 }
 

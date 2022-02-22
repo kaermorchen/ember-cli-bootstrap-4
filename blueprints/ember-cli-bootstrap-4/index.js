@@ -6,7 +6,7 @@ const fs = require('fs');
 
 module.exports = {
   normalizeEntityName(entityName) {
-    return entityName || "ember-cli-bootstrap-4";
+    return entityName || 'ember-cli-bootstrap-4';
   },
 
   afterInstall() {
@@ -32,5 +32,5 @@ module.exports = {
       { name: 'ember-cli-sass', target: '^10.0.0' },
       { name: 'sass', target: '^1.23.0' },
     ]);
-  }
+  },
 };
