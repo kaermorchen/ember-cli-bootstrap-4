@@ -54,7 +54,6 @@
     "sass": "^1.23.3"
   },
   "devDependencies": {
-    "@ember/jquery": "^0.6.1",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.6.0",
     "@embroider/test-setup": "^0.48.1",
