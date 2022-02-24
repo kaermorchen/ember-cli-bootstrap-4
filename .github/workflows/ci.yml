@@ -3,69 +3,75 @@ name: CI
 on:
   push:
     branches:
+      - main
       - master
-    tags:
-      - 'v*'
-    paths-ignore:
-      - 'CHANGELOG.md'
-  pull_request:
+  pull_request: {}
 
-env:
-  NODE_VERSION: 14.17
+concurrency:
+   group: ci-${{ github.head_ref || github.ref }}
+   cancel-in-progress: true
 
 jobs:
-  lint:
-    name: Linting
+  test:
+    name: "Tests"
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/cache@v2
-        id: npm-cache
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm ci
-      - name: Linting
-        run: npm run lint
 
-  basic_test:
-    name: Basic test
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
-    needs: lint
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v2
+      - name: Install Node
+        uses: actions/setup-node@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/cache@v2
-        id: npm-cache
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm ci
-      - name: Test
+          node-version: 16.x
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci
+      - name: Lint
+        run: npm run lint
+      - name: Run Tests
         run: npm run test:ember
 
-  compatibility_tests:
-    name: Compatibility tests
+  floating:
+    name: "Floating Dependencies"
     runs-on: ubuntu-latest
-    timeout-minutes: 20
-    needs: basic_test
+
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: ${{ env.NODE_VERSION }}
-      - uses: actions/cache@v2
-        id: npm-cache
+          node-version: 16.x
+          cache: npm
+      - name: Install Dependencies
+        run: npm install --no-shrinkwrap
+      - name: Run Tests
+        run: npm run test:ember
+
+  try-scenarios:
+    name: ${{ matrix.try-scenario }}
+    runs-on: ubuntu-latest
+    needs: 'test'
+
+    strategy:
+      fail-fast: false
+      matrix:
+        try-scenario:
+          - ember-lts-3.24
+          - ember-lts-3.28
+          - ember-release
+          - ember-beta
+          - ember-canary
+          - ember-classic
+          - ember-default-with-jquery
+          - embroider-safe
+          - embroider-optimized
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install Node
+        uses: actions/setup-node@v2
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-      - run: npm ci
-      - name: Tests
-        run: npm run test:ember-compatibility
+          node-version: 16.x
+          cache: npm
+      - name: Install Dependencies
+        run: npm ci
+      - name: Run Tests
+        run: ./node_modules/.bin/ember try:one ${{ matrix.try-scenario }}
