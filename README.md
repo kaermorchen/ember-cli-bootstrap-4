@@ -2,7 +2,7 @@
 
 <p align="center">
   <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/v/ember-cli-bootstrap-4.svg?style=flat-square&colorB=44cc11" alt="npm version"></a>
-  <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg?style=flat-square" alt="npm monthly downloads"></a>  
+  <a href="https://www.npmjs.com/package/ember-cli-bootstrap-4"><img src="https://img.shields.io/npm/dm/ember-cli-bootstrap-4.svg?style=flat-square" alt="npm monthly downloads"></a>
   <a href="https://travis-ci.org/kaermorchen/ember-cli-bootstrap-4"><img src="https://img.shields.io/travis/kaermorchen/ember-cli-bootstrap-4.svg?style=flat-square" alt="Build Status"></a>
   <a href="https://emberobserver.com/addons/ember-cli-bootstrap-4"><img src="https://emberobserver.com/badges/ember-cli-bootstrap-4.svg" alt="Ember Observer Score"></a>
   <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square" alt="License: MIT"></a>
@@ -45,37 +45,22 @@ or for grid only
 
 ## Configuration
 
-### JavaScript Components
-This addon don't have any Ember.js components.
+### JavaScript
+Ember don't support jQuery and this addon don't include the javascript part of Bootstrap too.
 
-Javascript files of Bootstrap are adding from `bootstrap/dist/js/bootstrap.js`.
+If you need to use `bootstrap.js` in your project, install `jQuery` and `popper.js` and include its like [others dependencies](https://guides.emberjs.com/release/addons-and-dependencies/).
 
-For import not all Bootstrap 4 js modules, you can specify its in `ember-cli-build`:
-
-```js
-module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
-    'ember-cli-bootstrap-4': {
-      //Default list
-      js: ['util', 'alert', 'button', 'carousel', 'collapse', 'dropdown', 'modal', 'tooltip', 'popover', 'scrollspy', 'tab', 'toast']
-    }
-  });
-
-  ...
-};
+```bash
+npm install jquery popper.js
 ```
 
-Or you can turn its off:
 ```js
-module.exports = function(defaults) {
-  let app = new EmberApp(defaults, {
-    'ember-cli-bootstrap-4': {
-      js: null
-    }
-  });
+// ember-cli-build.js
 
-  ...
-};
+app.import('node_modules/jquery/dist/jquery.js');
+app.import('node_modules/popper.js/dist/umd/popper.js');
+app.import('node_modules/popper.js/dist/umd/popper-utils.js');
+app.import('node_modules/bootstrap/dist/js/bootstrap.js');
 ```
 
 ### Custom variables
