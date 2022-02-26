@@ -12,6 +12,7 @@
     "styles",
     "ember-addon"
   ],
+  "homepage": "https://github.com/kaermorchen/ember-cli-bootstrap-4",
   "repository": {
     "type": "git",
     "url": "git@github.com:kaermorchen/ember-cli-bootstrap-4.git"
@@ -26,7 +27,6 @@
     "doc": "doc",
     "test": "tests"
   },
-  "homepage": "https://github.com/kaermorchen/ember-cli-bootstrap-4",
   "scripts": {
     "build": "ember build --environment=production",
     "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -",
@@ -86,10 +86,15 @@
     "prettier": "^2.5.1",
     "qunit": "^2.17.2",
     "qunit-dom": "^1.6.0",
+    "release-it": "^14.2.1",
+    "release-it-lerna-changelog": "^3.1.0",
     "webpack": "^5.69.0"
   },
   "engines": {
     "node": "12.* || 14.* || >= 16"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org"
   },
   "ember": {
     "edition": "octane"
@@ -98,5 +103,20 @@
     "configPath": "tests/dummy/config",
     "defaultBlueprint": "ember-cli-bootstrap-4",
     "demoURL": "https://kaermorchen.github.io/ember-cli-bootstrap-4/"
+  },
+  "release-it": {
+    "plugins": {
+      "release-it-lerna-changelog": {
+        "infile": "CHANGELOG.md",
+        "launchEditor": true
+      }
+    },
+    "git": {
+      "tagName": "v${version}"
+    },
+    "github": {
+      "release": true,
+      "tokenRef": "GITHUB_AUTH"
+    }
   }
 }
