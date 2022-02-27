@@ -42,7 +42,7 @@
     "test:ember-compatibility": "ember try:each"
   },
   "dependencies": {
-    "bootstrap": "^4.4.1",
+    "bootstrap": "^4.6.1",
     "broccoli-funnel": "^2.0.2",
     "broccoli-merge-trees": "^3.0.2",
     "ember-cli-babel": "^7.26.10",
