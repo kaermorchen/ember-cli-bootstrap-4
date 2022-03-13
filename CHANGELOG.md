@@ -1,3 +1,4 @@
+# Changelog
 
 ## v0.13.0 (2022-02-28)
 
@@ -18,5 +19,3 @@
 
 #### Committers: 1
 - Stanislav Romanov ([@kaermorchen](https://github.com/kaermorchen))
-
-# Changelog
