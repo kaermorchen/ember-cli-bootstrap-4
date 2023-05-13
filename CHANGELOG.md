@@ -1,5 +1,13 @@
 # Changelog
 
+## v1.0.0 (2023-05-13)
+
+#### :memo: Documentation
+* [#66](https://github.com/kaermorchen/ember-cli-bootstrap-4/pull/66) Move changelog's title ([@kaermorchen](https://github.com/kaermorchen))
+
+#### Committers: 1
+- Stanislav Romanov ([@kaermorchen](https://github.com/kaermorchen))
+
 ## v0.13.0 (2022-02-28)
 
 #### :boom: Breaking Change
